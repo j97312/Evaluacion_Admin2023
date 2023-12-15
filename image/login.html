@@ -1,103 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./JS/login_admin.js"></script>
 </head>
 
 <body>
-
-  <center>
-
-    <div class="divCentral">
-      <center>
-        <!-- Título -->
-        <table width="790" border="0" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td align="left" width="25%"><a href="http://www.uaq.mx" target="x"><img border="0"
-                    src="css/logoazul2.gif" class="escudoUaq" alt="UNIVERSIDAD AUTÓNOMA DE QUERÉTARO"></a>
-              </td>
-              <td class="tdCentro" width="50%" valign="bottom">
-                <p class="tituloChicoA">Evaluación Administrativa</p>
-              </td>
-              <td width="25%">&nbsp;</td>
-            </tr>
-            <tr>
-              <td align="right" valign="top" colspan="3" width="25%">
-                <table border="0" width="100%">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <hr class="hr">
-                      </td>
-                      <td>
-                        <img border="0" src="css/SIIA_portal_uaq.gif" alt="UNIVERSIDAD AUTÓNOMA DE QUERÉTARO">
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- Termina Título -->
-
-
-        <form method="post" action="servlet/Sacceso" name="formulario">
-
-
-          <table border="0">
-            <tbody>
-              <tr>
-                <td class="tdDerechaMedioBold">Expediente:</td>
-
-                <td class="tdIzquierdaMedio"><input type="text" name="expediente" tabindex="1" class="inputLogin">
-                </td>
-              </tr>
-              <tr>
-                <td class="tdDerechaMedioBold">NIP:</td>
-
-                <td class="tdIzquierdaMedio"><input type="password" name="nip" tabindex="2" class="inputLogin"></td>
-              </tr>
-
-
-              <tr>
-                <td colspan="2" class="tdCentro">
-
-                  <input type="button" value="Entrar" class="boton" onclick="envia();" tabindex="3">
-
-
-                  <input type="reset" name="Reload" value="Cancelar" class="boton" tabindex="4">
-
-                </td>
-              </tr>
-              <tr>
-
-              </tr>
-            </tbody>
-          </table>
-
-        </form>
-
-        <table border="0">
-          <tbody>
-            <tr>
-              <td align="center">
-                <img src="css/reloj.gif" width="1" height="1" name="wait"><br>
-                <img src="css/espere.GIF" width="1" height="1" name="espere">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-
-      </center>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6 offset-3">
+                <h1>Inicia sesión Estudiante</h1>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6 offset-3">
+                <div class="form-group">
+                    <label for="input-mail">Correo electrónico</label>
+                    <input type="email" class="form-control" id="input-mail" placeholder="correo@dominio.ext">
+                    <small class="form-text text-muted">El correo con el que te registraste.</small>
+                </div>
+                <div class="form-group">
+                    <label for="input-nip">NIP</label>
+                    <input type="password" class="form-control" id="input-nip" placeholder="***********">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary">Entrar</button>
+                    <button class="btn btn-secondary">Registro</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </center>
-
 </body>
 
 </html>
