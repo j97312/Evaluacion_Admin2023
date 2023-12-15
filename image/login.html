@@ -1,12 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 </head>
+
 <body>
-    
-    
+
+  <center>
+
+    <div class="divCentral">
+      <center>
+        <!-- Título -->
+        <table width="790" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td align="left" width="25%"><a href="http://www.uaq.mx" target="x"><img border="0"
+                    src="css/logoazul2.gif" class="escudoUaq" alt="UNIVERSIDAD AUTÓNOMA DE QUERÉTARO"></a>
+              </td>
+              <td class="tdCentro" width="50%" valign="bottom">
+                <p class="tituloChicoA">Evaluación Administrativa</p>
+              </td>
+              <td width="25%">&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="right" valign="top" colspan="3" width="25%">
+                <table border="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <hr class="hr">
+                      </td>
+                      <td>
+                        <img border="0" src="css/SIIA_portal_uaq.gif" alt="UNIVERSIDAD AUTÓNOMA DE QUERÉTARO">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Termina Título -->
+
+
+        <form method="post" action="servlet/Sacceso" name="formulario">
+
+
+          <table border="0">
+            <tbody>
+              <tr>
+                <td class="tdDerechaMedioBold">Expediente:</td>
+
+                <td class="tdIzquierdaMedio"><input type="text" name="expediente" tabindex="1" class="inputLogin">
+                </td>
+              </tr>
+              <tr>
+                <td class="tdDerechaMedioBold">NIP:</td>
+
+                <td class="tdIzquierdaMedio"><input type="password" name="nip" tabindex="2" class="inputLogin"></td>
+              </tr>
+
+
+              <tr>
+                <td colspan="2" class="tdCentro">
+
+                  <input type="button" value="Entrar" class="boton" onclick="envia();" tabindex="3">
+
+
+                  <input type="reset" name="Reload" value="Cancelar" class="boton" tabindex="4">
+
+                </td>
+              </tr>
+              <tr>
+
+              </tr>
+            </tbody>
+          </table>
+
+        </form>
+
+        <table border="0">
+          <tbody>
+            <tr>
+              <td align="center">
+                <img src="css/reloj.gif" width="1" height="1" name="wait"><br>
+                <img src="css/espere.GIF" width="1" height="1" name="espere">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </center>
+    </div>
+  </center>
+
 </body>
+
 </html>
