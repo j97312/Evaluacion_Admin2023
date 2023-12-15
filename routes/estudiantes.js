@@ -3,6 +3,23 @@ const estudiante = express.Router();
 const bd = require('../config/database');
 
 
+estudiante.post('/login', async (req, res, next) => {
+
+    const { expediente, nip } = req.body
+
+    if (expediente && nip) {
+
+        let query = `SELECT * FROM estudiantes WHERE expediente = '${expediente}' AND nip = '${nip}';`
+        const rows = await bd.query(query)
+
+        if (rows.length == 1) {
+            return res.status(201).json({ code: 201, message: "Login Exitoso" })
+        }
+        return res.status(500).json({ code: 500, message: "Ocurrio un error al ingresar" })
+    }
+    return res.status(500).json({ code: 500, message: "Datos incompletos" })
+})
+
 estudiante.post('/register', async (req, res, next) => {
 
     const { expediente, nombre, apellidos, carrera, correo, telefono, NIP } = req.body;
