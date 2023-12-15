@@ -20,8 +20,15 @@ function login() {
             nip: nip
         }
     }).then(function (res) {
-        console.log(res)
+        if (res.data.code === 201) {
+            window.location.href = "evaluacion.html"
+        } else {
+            alert("Usuario o contraseña incorrectos")
+            window.location.href = "login.html"
+        }
+
     }).catch(function (err) {
         console.log(err)
+        alert("Usuario y/o contraseña Incorrectos")
     })
 }

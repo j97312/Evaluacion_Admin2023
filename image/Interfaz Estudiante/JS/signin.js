@@ -33,7 +33,10 @@ function signin() {
         }
     }).then(function (res) {
         console.log(res)
+        alert("¡Registro Éxitoso!")
+        window.location.href = "login.html"
     }).catch(function (err) {
+        alert("Datos incompletos o/e Incorrectos")
         console.log(err)
     })
 }
