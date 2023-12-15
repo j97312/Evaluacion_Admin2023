@@ -2,6 +2,23 @@ const express = require('express');
 const admin = express.Router();
 const bd = require('../config/database');
 
+admin.post('/login', async (req, res, next) => {
+
+    const { correo, nip } = req.body
+
+    if (correo && nip) {
+
+        let query = `SELECT * FROM administrador WHERE correo = '${correo}' AND nip = '${nip}';`
+        const rows = await bd.query(query)
+
+        if (rows.length == 1) {
+            return res.status(201).json({ code: 201, message: "Login Exitoso" })
+        }
+        return res.status(500).json({ code: 500, message: "Ocurrio un error al ingresar" })
+    }
+    return res.status(500).json({ code: 500, message: "Datos incompletos" })
+})
+
 admin.post('/register', async (req, res, next) => {
 
     const { numEmpleado, nombre, apellido, direccion, telefono, correo, nip } = req.body;
