@@ -1,6 +1,10 @@
 window.load = init;
 
 function init() {
+    document.querySelector('.btn-secondary').addEventListener('click', function () {
+        window.location.href = "login.html"
+    })
+
     document.querySelector('.btn-primary').addEventListener('click', test)
 }
 
@@ -39,7 +43,7 @@ function test() {
 
         }
     }).then(function (res) {
-        if (res.data.code === 200) {
+        if (res.data.code === 201) {
             console.log(res)
             alert("Test Exitoso")
             window.location.href = "login.html"

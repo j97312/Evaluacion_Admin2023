@@ -76,7 +76,7 @@ estudiante.patch('/test', async (req, res, next) => {
         const rows = await bd.query(query);
 
         if (rows.affectedRows == 1) {
-            return res.status(200).json({ code: 200, message: "Test realizado correctamente" });
+            return res.status(201).json({ code: 201, message: "Test realizado correctamente" });
         }
         return res.status(500).json({ code: 500, message: "Ocurrió un error" });
     }
