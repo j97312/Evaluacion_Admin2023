@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-12-2023 a las 05:02:07
+-- Tiempo de generación: 16-12-2023 a las 02:43:23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -42,7 +42,8 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`numEmpleado`, `nombre`, `apellido`, `direccion`, `telefono`, `correo`, `nip`) VALUES
-(4, 'Janko', 'Gonzalez', 'Candiles Casa linda #34', '4425678900', 'jankoloko@gmail.com', 1234);
+(4, 'Janko', 'Gonzalez', 'Candiles Casa linda #34', '4425678900', 'jankoloko@gmail.com', 1234),
+(34, 'luis gerardo', 'Tinoco Coronel', 'Av. de las Ciencias S/N', '4427481108', 'tinococoronel.gerardo@gmail.com', 123454321);
 
 -- --------------------------------------------------------
 
@@ -74,13 +75,13 @@ INSERT INTO `administrativo` (`numEmpleado`, `nombre`, `apellido`, `area`, `corr
 
 CREATE TABLE `estudiantes` (
   `id` int(20) NOT NULL,
-  `expediente` varchar(10) NOT NULL,
+  `expediente` int(10) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellidos` varchar(50) NOT NULL,
   `carrera` varchar(50) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `telefono` varchar(30) NOT NULL,
-  `NIP` int(50) DEFAULT NULL,
+  `nip` int(50) DEFAULT NULL,
   `satisfaccion_servicio` int(11) DEFAULT NULL,
   `capacidad_respuesta` int(11) DEFAULT NULL,
   `efectividad_resolucion` int(11) DEFAULT NULL,
@@ -97,9 +98,10 @@ CREATE TABLE `estudiantes` (
 -- Volcado de datos para la tabla `estudiantes`
 --
 
-INSERT INTO `estudiantes` (`id`, `expediente`, `nombre`, `apellidos`, `carrera`, `correo`, `telefono`, `NIP`, `satisfaccion_servicio`, `capacidad_respuesta`, `efectividad_resolucion`, `claridad_informacion`, `consistencia_calidad`, `amabilidad_cortesia`, `utilidad_documentacion`, `puntualidad_entrega`, `satisfaccion_resolucion_problemas`, `accesibilidad_disponibilidad`) VALUES
-(1, '714563', 'Gerardo', 'Tinoco Coronel', 'Software', 'tinococoronel.gerardo@gmail.com', '442 748 1108', 1234, 4, 2, 5, 1, 1, 2, 4, 4, 3, 1),
-(5, '290054', 'Pedro', 'Lopez Jimenez', 'Telecomunicaciones', 'pedro.jim@gmail.com', '4427481108', 1234, 5, 2, 5, 1, 1, 2, 4, 5, 3, 1);
+INSERT INTO `estudiantes` (`id`, `expediente`, `nombre`, `apellidos`, `carrera`, `correo`, `telefono`, `nip`, `satisfaccion_servicio`, `capacidad_respuesta`, `efectividad_resolucion`, `claridad_informacion`, `consistencia_calidad`, `amabilidad_cortesia`, `utilidad_documentacion`, `puntualidad_entrega`, `satisfaccion_resolucion_problemas`, `accesibilidad_disponibilidad`) VALUES
+(1, 714563, 'Gerardo', 'Tinoco Coronel', 'Software', 'tinococoronel.gerardo@gmail.com', '442 748 1108', 1234, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(5, 290054, 'Pedro', 'Lopez Jimenez', 'Telecomunicaciones', 'pedro.jim@gmail.com', '4427481108', 1234, 3, 3, 1, 1, 1, 5, 1, 1, 3, 1),
+(8, 297160, 'Juan', 'Casablancas', 'Software', 'juan@gmail.com', '442 345 6789', 1234321, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -131,7 +133,7 @@ ALTER TABLE `estudiantes`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
