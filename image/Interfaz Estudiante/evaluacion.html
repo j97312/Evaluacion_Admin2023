@@ -1,11 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tablas de Evaluación</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../Interfaz Estudiante/JS/resultados.js"></script>
+    <title>Encuesta de Satisfacción</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid rgb(0, 0, 0);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #73ebed;
+        }
+
+        select {
+            width: 100%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+
+        .centered-input {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <h2>Encuesta de Satisfacción</h2>
+
+    <form id="encuestaForm">
+        <div class="form-group row">
+            <label for="input-nombre"></label>
+            <input type="text" class="form-control" id="input-nombre" placeholder="Tu nombre"
+                style="width: 200px; margin: 0 auto;">
+
+        </div>
+        </div>
+        </div>
+        <table>
+            <tr>
+                <th>Preguntas</th>
+                <th>Puntuación (1-5)</th>
+            </tr>
+            <tr>
+
+                <td>En una escala del 1 al 5, ¿qué puntuación le darías al nivel de satisfacción con el servicio
+                    proporcionado por este departamento?</td>
+                <td>
+                    <select id="options-q1">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>¿Cómo calificarías la capacidad de respuesta de este departamento a tus necesidades y consultas? (1
+                    siendo muy lento, 5 siendo muy rápido)</td>
+                <td>
+                    <select id="options-q2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>En una escala del 1 al 5, ¿qué tan efectivo encuentras que es el personal de este departamento en la
+                    resolución de tus problemas o inquietudes?</td>
+                <td>
+                    <select id="options-q3">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>¿Qué puntuación asignarías a la comunicación y claridad en la información proporcionada por este
+                    departamento? (1 siendo poco claro, 5 siendo muy claro)</td>
+                <td>
+                    <select id="options-q4">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>En una escala del 1 al 5, ¿qué tan consistente es la calidad del servicio que recibes de este
+                    departamento?</td>
+                <td>
+                    <select id="options-q5">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>¿Cómo calificarías la amabilidad y cortesía del personal de este departamento? (1 siendo poco
+                    amable, 5
+                    siendo muy amable)</td>
+                <td>
+                    <select id="options-q6">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>En una escala del 1 al 5, ¿qué tan útil consideras que es la documentación o material proporcionado
+                    por
+                    este departamento?</td>
+                <td>
+                    <select id="options-q7">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>¿Qué puntuación asignarías a la puntualidad en la entrega de los productos o servicios
+                    proporcionados
+                    por este departamento? (1 siendo muy retrasado, 5 siendo siempre puntual)</td>
+                <td>
+                    <select id="options-q8">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>En una escala del 1 al 5, ¿qué tan satisfecho estás con la capacidad de este departamento para
+                    resolver
+                    problemas o situaciones inesperadas?</td>
+                <td>
+                    <select id="options-q9">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>¿Cómo calificarías la accesibilidad y disponibilidad de este departamento para atender tus consultas
+                    o
+                    necesidades? (1 siendo muy difícil de contactar, 5 siendo siempre disponible)</td>
+                <td>
+                    <select id="options-q10">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-primary">Enviar</button>
+    </form>
+    </div>
 </body>
+
 </html>
